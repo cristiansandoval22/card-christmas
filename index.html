@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/luces-de-navidad.png" type="image/x-icon">
+
+    <title>Tarjetas Navideñas Personalizadas</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- Formulario -->
+        <section class="form">
+            <h1 class="form__title">Personaliza tu tarjeta</h1>
+            <form class="form__body" id="tarjetaForm">
+                <div class="form__group">
+                    <label class="form__label" for="de">De:</label>
+                    <input class="form__input" type="text" id="de" placeholder="Ingresa tu nombre">
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="para">Para:</label>
+                    <input class="form__input" type="text" id="para" placeholder="Ingresa el nombre">
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="mensaje">Escribe tu mensaje:</label>
+                    <textarea class="form__textarea" id="mensaje" rows="4"
+                        placeholder="Escribe tu mensaje..."></textarea>
+                </div>
+
+                <button class="form__button" type="button" id="descargarBtn">Descargar Tarjeta</button>
+            </form>
+        </section>
+
+        <!-- Vista Previa -->
+        <section class="preview">
+            <h2 class="preview__title">Vista previa</h2>
+            <div class="preview__card" id="tarjeta">
+                <div class="preview__card-content">
+                    <p class="preview__to" id="previewPara">Para: Nombre del destinatario</p>
+                    <p class="preview__from" id="previewDe">De: Tu nombre</p>
+                    <p class="preview__message" id="previewMensaje">Tu mensaje aquí</p>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
