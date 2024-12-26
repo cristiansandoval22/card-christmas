@@ -26,13 +26,25 @@ mensajeInput.addEventListener("input", () => {
 
 // Descargar tarjeta como imagen
 descargarBtn.addEventListener("click", () => {
-  html2canvas(tarjeta).then((canvas) => {
-    const link = document.createElement("a");
-    link.download = "tarjeta-navidad.png";
-    link.href = canvas.toDataURL("image/png");
-    link.click();
+    // Obtener los valores de los campos del formulario
+    const paraValue = document.getElementById("para").value.trim();
+    const deValue = document.getElementById("de").value.trim(); // Asegúrate de que este ID sea correcto
+    const mensajeValue = document.getElementById("mensaje").value.trim();
+  
+    // Verificar si los campos están vacíos
+    if (!paraValue || !deValue || !mensajeValue) {
+      alert("Por favor, completa todos los campos antes de descargar.");
+      return; // Detener la ejecución si hay campos vacíos
+    }
+  
+    // Si todos los campos están llenos, proceder a la descarga
+    html2canvas(tarjeta).then((canvas) => {
+      const link = document.createElement("a");
+      link.download = "tarjeta-navidad.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    });
   });
-});
 
 // Limpiar formulario
 resetBtn.addEventListener("click", () => {

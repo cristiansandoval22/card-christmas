@@ -24,6 +24,9 @@ h2 {
     color: #f7e02c;
     text-align: center;
 }
+.page {
+    margin-top: 2rem;
+}
 
 .form__title,
 .preview__title {
