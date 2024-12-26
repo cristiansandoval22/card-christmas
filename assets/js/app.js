@@ -9,6 +9,7 @@ const previewMensaje = document.getElementById("previewMensaje");
 
 const tarjeta = document.getElementById("tarjeta");
 const descargarBtn = document.getElementById("descargarBtn");
+const resetBtn = document.getElementById("resetBtn");
 
 // Actualizar la vista previa
 deInput.addEventListener("input", () => {
@@ -33,6 +34,16 @@ descargarBtn.addEventListener("click", () => {
   });
 });
 
+// Limpiar formulario
+resetBtn.addEventListener("click", () => {
+  deInput.value = "";
+  paraInput.value = "";
+  mensajeInput.value = "";
+  previewDe.textContent = "De: Tu nombre";
+  previewPara.textContent = "Para: Nombre del destinatario";
+  previewMensaje.textContent = "Tu mensaje aqui";
+});
+
 
 const textarea = document.getElementById('mensaje');
 
@@ -41,3 +52,12 @@ textarea.addEventListener('input', function () {
   this.style.height = this.scrollHeight + 'px'; // Ajusta la altura al contenido
 });
 
+
+function actualizarContador() {
+    const textarea = document.getElementById("mensaje");
+    const contador = document.getElementById("contador");
+    const max = textarea.maxLength;
+    const actual = textarea.value.length;
+    contador.textContent = `${actual}/${max}`;
+  }
+  
